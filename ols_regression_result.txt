@@ -4,7 +4,7 @@ Dep. Variable:            is_critical   R-squared:                       0.442
 Model:                            OLS   Adj. R-squared:                  0.439
 Method:                 Least Squares   F-statistic:                     128.8
 Date:                Sun, 22 Sep 2019   Prob (F-statistic):               0.00
-Time:                        12:32:43   Log-Likelihood:                 295.70
+Time:                        13:22:22   Log-Likelihood:                 295.70
 No. Observations:                2941   AIC:                            -553.4
 Df Residuals:                    2922   BIC:                            -439.7
 Df Model:                          18                                         
@@ -12,18 +12,19 @@ Covariance Type:            nonrobust
 =======================================================================================
                           coef    std err          t      P>|t|      [0.025      0.975]
 ---------------------------------------------------------------------------------------
-const                  -0.0043      0.015     -0.296      0.768      -0.033       0.024
+x_occurrence           -0.0006   7.15e-05     -7.766      0.000      -0.001      -0.000
 x_psychiatric          -0.0011      0.000     -8.288      0.000      -0.001      -0.001
 xn_psychiatric          0.0006   7.71e-05      7.634      0.000       0.000       0.001
-x_occurrence           -0.0006   7.15e-05     -7.766      0.000      -0.001      -0.000
+is_psychiatric          0.0047      0.009      0.503      0.615      -0.014       0.023
 x_visit              -4.25e-05   9.84e-05     -0.432      0.666      -0.000       0.000
 x_procedure             0.0002   1.43e-05     16.986      0.000       0.000       0.000
 avg_occu_duration    4.008e-06   1.79e-06      2.244      0.025    5.06e-07    7.51e-06
 min_occu_duration      -0.0005      0.000     -1.022      0.307      -0.001       0.000
 max_occu_duration   -9.823e-08    2.7e-07     -0.364      0.716   -6.27e-07    4.31e-07
-x_death                 0.2804      0.028     10.186      0.000       0.226       0.334
+is_death                0.2804      0.028     10.186      0.000       0.226       0.334
 x_age                   0.0008      0.000      3.352      0.001       0.000       0.001
-x_sex                   0.0226      0.009      2.663      0.008       0.006       0.039
+is_sex_male             0.0137      0.006      2.205      0.028       0.002       0.026
+is_sex_female          -0.0090      0.006     -1.409      0.159      -0.022       0.004
 x_mellitus             -0.0006      0.000     -1.747      0.081      -0.001    7.89e-05
 x_hypertension         -0.0001      0.000     -0.309      0.758      -0.001       0.001
 x_alz                  -0.0003      0.001     -0.245      0.807      -0.003       0.002
@@ -36,10 +37,10 @@ x_crit2_psychiatric     0.0084      0.002      3.924      0.000       0.004     
 Omnibus:                     1553.942   Durbin-Watson:                   2.004
 Prob(Omnibus):                  0.000   Jarque-Bera (JB):            14431.209
 Skew:                           2.337   Prob(JB):                         0.00
-Kurtosis:                      12.794   Cond. No.                     1.30e+18
+Kurtosis:                      12.794   Cond. No.                     1.13e+20
 ==============================================================================
 
 Warnings:
 [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
-[2] The smallest eigenvalue is 8.43e-25. This might indicate that there are
+[2] The smallest eigenvalue is 1.13e-28. This might indicate that there are
 strong multicollinearity problems or that the design matrix is singular.
