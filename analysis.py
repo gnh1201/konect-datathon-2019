@@ -45,7 +45,7 @@ df = pd.read_csv('results-20190922-131603-notitle.csv', header = None, names = n
 
 Y = df['is_critical']
 X = df.drop(['person_id', 'is_critical', 'd0', 'd1', 'd2'], axis=1) # df.iloc[x1:y1, x2:y2]
-X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.3)
+#X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.3)
 
 X2 = sm.add_constant(X)
 est = sm.OLS(Y, X2)
@@ -56,15 +56,16 @@ print(est2.summary())
 #print logit_model.summary()
 
 clf = LogisticRegression()
-print clf.fit(X_train, Y_train)
-print clf.score(X_test, Y_test)
-print clf.coef_
+#print clf.fit(X_train, Y_train)
+#print clf.score(X_test, Y_test)
+print clf.fit(X, Y)
+#print clf.coef_
 
-print "===== Logistic Regression: Coeffienct (Train:Test = 7:3) ====="
 coef = clf.coef_[0]
 print coef
 
-print "===== Logistic Regression (Train:Test = 7:3) ====="
+print "===== Logistic Regression: Result  ====="
 coefs = zip(coef, names[1:])
+print "coef.e  \tcoef.d  \tname"
 for x in coefs:
     print ('%.2E' % x[0]), "\t", x[0], "\t", x[1]
