@@ -47,11 +47,6 @@ Y = df['is_critical']
 X = df.drop(['person_id', 'is_critical', 'd0', 'd1', 'd2'], axis=1) # df.iloc[x1:y1, x2:y2]
 X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.3)
 
-clf = LogisticRegression()
-print clf.fit(X_train,Y_train)
-print clf.score(X_test, Y_test)
-print clf.coef_
-
 X2 = sm.add_constant(X)
 est = sm.OLS(Y, X2)
 est2 = est.fit()
@@ -60,6 +55,12 @@ print(est2.summary())
 #logit_model = sm.Logit(Y, X).fit()
 #print logit_model.summary()
 
+clf = LogisticRegression()
+print clf.fit(X_train, Y_train)
+print clf.score(X_test, Y_test)
+print clf.coef_
+
+print "===== Logistic Regression: Coeffienct (Train:Test = 7:3) ====="
 coef = clf.coef_[0]
 print coef
 
